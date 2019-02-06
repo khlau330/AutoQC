@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<html>
+	<body>
+		<div class="heading">
+			<h1>AutoQC Webpage!</h1>
+			<h2>Automatic Quality Control System for Automatic Weather Stations</h2>
+			<p> <strong>Project initiated on 9/1/2019.</strong> </p>
+			<p> <strong>Author</strong>: Li Lok Hang </p>
+		</div>
+
+		<div class="spec">
+		    <p> <strong>Station id</strong>: {{ stationname }} </p>
+		    <p> <strong>Element name</strong>: {{ elementname }} </p>
+		</div>
+
+		<div class "data">
+	        <table border = 1>
+	        		<tr>
+	        			<th> Date </th>
+	        			<th> Value </th>
+	        			<th> Flag </th>
+	        		</tr>
+		        {% for date, value, flag in elist %}
+		            <tr>
+		                <td> {{ date }} </td>
+		                <td> {{ value }} </td>
+		                <td> {{ flag }} </td>
+		            </tr>
+		        {% endfor %}         
+	        </table>
+    	</div>
+    </body>
+</html>
+
+{% endblock %}
